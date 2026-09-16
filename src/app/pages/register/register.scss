@@ -1,0 +1,21 @@
+@use '../login/login';
+
+.auth-card {
+  border-color: #dfe7f1;
+}
+
+button {
+  background: #16a34a;
+}
+
+button:hover:not(:disabled) {
+  background: #15803d;
+}
+
+.brand {
+  color: #0f172a;
+}
+
+.auth-header h1 {
+  color: #111827;
+}

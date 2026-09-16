@@ -1,0 +1,21 @@
+<main class="agenda">
+  <div class="agenda-card">
+    @for (contacto of contacts; track contacto.id) {
+      <div class="contact-row">
+        <div class="avatar" [style.background-color]="contacto.color">
+          {{ contacto.nombre.charAt(0).toUpperCase() }}
+        </div>
+        <div class="contact-name">
+          {{ contacto.nombre }}
+          {{ contacto.apellido }}
+          {{ contacto.telefono }}
+          <button class="view-contact-button">
+            <a [routerLink]="['/agenda', contacto.id]" class="contact-link">Ver contacto</a>
+          </button>
+          <button (click)="eliminarContacto(contacto.id)" class="delete-contact-button">Eliminar contacto</button>
+        </div>
+      </div>
+    }
+  </div>
+    <button type="submit"> <a [routerLink]="['/agenda/create']">Agregar contacto</a> </button>
+</main>

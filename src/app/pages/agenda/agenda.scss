@@ -1,0 +1,51 @@
+:host {
+  display: block;
+  min-height: 100dvh;
+  background: #f3f4f6;
+  padding: 24px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.agenda {
+  display: grid;
+  place-items: center;
+  min-height: calc(100dvh - 48px);
+}
+
+.agenda-card {
+  width: min(100%, 420px);
+  padding: 12px;
+  box-sizing: border-box;
+}
+
+.contact-row {
+  width: calc(100% - 24px); // 12px + 12px
+  margin: 10px 12px;
+  padding: 10px 12px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-radius: 12px;
+  background: #f9fafb;
+  border: 1px solid #eef2f7;
+}
+
+.avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: white;
+  font-weight: 700;
+  font-size: 0.95rem;
+  flex-shrink: 0;
+}
+
+.contact-name {
+  flex: 1;
+  color: #111827;
+  font-size: 1rem;
+  text-transform: capitalize;
+}

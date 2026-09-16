@@ -1,0 +1,9 @@
+<form (submit)="onSubmit($event)">
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" [formField]="formCreate.nombre">
+    <label for="apellido">Apellido:</label>
+    <input type="text" id="apellido" [formField]="formCreate.apellido">
+    <label for="telefono">Teléfono:</label>
+    <input type="text" id="telefono" [formField]="formCreate.telefono">
+    <button type="submit">Guardar</button>
+</form>
