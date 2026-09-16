@@ -2,6 +2,7 @@ import { Component, inject, signal } from '@angular/core';
 import { ContactsServices } from '../../services/contacts-services';
 import { Contact } from '../../interfaces/contact';
 import { form, FormField } from '@angular/forms/signals';
+import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -14,6 +15,7 @@ export class CreateEditContact {
 
 
   contactServices = inject(ContactsServices);
+  router = inject(Router);
   
   newContact = signal<Contact>({
     id: '',
@@ -24,12 +26,10 @@ export class CreateEditContact {
   });
 
   formCreate = form(this.newContact);
-  router: any;
-
   onSubmit(event: Event) {
     event.preventDefault();
     const idContactoCreado = this.contactServices.addContact(this.newContact());
-    
+
     Swal.mixin({
       toast: true,
       position: "top-end",
@@ -46,8 +46,7 @@ export class CreateEditContact {
       title: "Contacto creado"
     });
 
-    this.router.navigate(['/agenda', "idContactoCreado"]);
-
+    this.router.navigate(['/agenda', idContactoCreado]);
   }
 
 }

@@ -18,7 +18,7 @@ export class ContactsServices {
   ]
   /// agrega contactos
   addContact(contact: Contact) {
-    const newId = this.contactList.length.toString();
+    const newId = (this.contactList.length + 1).toString();
 
     this.contactList.push({
       id: newId,
