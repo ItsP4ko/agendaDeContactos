@@ -24,6 +24,10 @@ export const routes: Routes = [
         component: CreateEditContact
     },
     {
+        path: "agenda/:id/edit",
+        component: CreateEditContact
+    },
+    {
         path: "agenda/:id",
         component: AgendaDetails
     },

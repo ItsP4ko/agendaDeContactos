@@ -9,7 +9,7 @@ import { Contact } from '../../interfaces/contact';
   styleUrl: './agenda-details.scss',
 })
 export class AgendaDetails {
-  id = input<string>('');
+  id = input.required<string>();
   contactServices = inject(ContactsServices);
   contact: Contact | undefined;
 

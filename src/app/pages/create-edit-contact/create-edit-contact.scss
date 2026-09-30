@@ -1,0 +1,55 @@
+:host {
+	display: block;
+	min-height: 100dvh;
+	padding: clamp(24px, 8vw, 72px) 20px;
+	background: var(--paper);
+}
+
+form {
+	width: min(100%, 620px);
+	margin: 0 auto;
+	padding: clamp(24px, 5vw, 48px);
+	border: 1px solid var(--line);
+	border-radius: 12px;
+	background: var(--surface);
+}
+
+label {
+	display: block;
+	margin: 0 0 8px;
+	color: var(--ink);
+	font-size: 0.86rem;
+	font-weight: 700;
+}
+
+input {
+	width: 100%;
+	margin-bottom: 20px;
+	padding: 14px 15px;
+	border: 1px solid var(--line);
+	border-radius: 10px;
+	color: var(--ink);
+	background: #fffaf4;
+}
+
+input:focus {
+	border-color: var(--accent);
+	outline: 0;
+}
+
+button {
+	width: 100%;
+	margin-top: 8px;
+	padding: 14px 18px;
+	border: 0;
+	border-radius: 10px;
+	color: var(--surface);
+	background: var(--accent);
+	font-weight: 700;
+	cursor: pointer;
+}
+
+button:focus-visible {
+	outline: 3px solid rgba(201, 93, 61, 0.35);
+	outline-offset: 4px;
+}

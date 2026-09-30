@@ -1,5 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
 
+:root {
+	--ink: #20201d;
+	--muted: #78736a;
+	--paper: #f4f0e9;
+	--surface: #fffdf9;
+	--line: #ded8ce;
+	--accent: #c95d3d;
+	--accent-dark: #a9462e;
+	--accent-soft: #f5ddd3;
+	--shadow: 0 20px 50px rgba(73, 57, 43, 0.1);
+}
+
 * {
 	box-sizing: border-box;
 }
@@ -11,7 +23,22 @@ body {
 }
 
 body {
-	background: #f4f0e9;
-	color: #20201d;
+	background: var(--paper);
+	color: var(--ink);
 	font-family: 'DM Sans', sans-serif;
+}
+
+button,
+input,
+textarea {
+	font: inherit;
+}
+
+button,
+a {
+	-webkit-tap-highlight-color: transparent;
+}
+
+::selection {
+	background: var(--accent-soft);
 }

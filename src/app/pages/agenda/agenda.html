@@ -1,21 +1,39 @@
 <main class="agenda">
-  <div class="agenda-card">
-    @for (contacto of contacts; track contacto.id) {
-      <div class="contact-row">
-        <div class="avatar" [style.background-color]="contacto.color">
-          {{ contacto.nombre.charAt(0).toUpperCase() }}
-        </div>
-        <div class="contact-name">
-          {{ contacto.nombre }}
-          {{ contacto.apellido }}
-          {{ contacto.telefono }}
-          <button class="view-contact-button">
-            <a [routerLink]="['/agenda', contacto.id]" class="contact-link">Ver contacto</a>
-          </button>
-          <button (click)="eliminarContacto(contacto.id)" class="delete-contact-button">Eliminar contacto</button>
-        </div>
+  <section class="agenda-card" aria-labelledby="agenda-title">
+    <header class="agenda-header">
+      <div>
+        <p class="eyebrow">Directorio personal</p>
+        <h1 id="agenda-title">Mis contactos</h1>
+        <p class="agenda-summary">{{ contacts.length }} contactos guardados</p>
+      </div>
+      <a class="primary-action" routerLink="/agenda/create">Agregar contacto</a>
+    </header>
+
+    @if (contacts.length === 0) {
+      <div class="empty-state">
+        <p class="empty-kicker">Todavía no hay contactos</p>
+        <p>Agregá el primero para empezar a organizar tu agenda.</p>
+        <a class="text-action" routerLink="/agenda/create">Crear contacto</a>
       </div>
     }
-  </div>
-    <button type="submit"> <a [routerLink]="['/agenda/create']">Agregar contacto</a> </button>
+
+    <div class="contact-list">
+    @for (contacto of contacts; track contacto.id) {
+      <article class="contact-row">
+        <div class="avatar" aria-hidden="true">
+          {{ contacto.firstName.charAt(0).toUpperCase() }}
+        </div>
+        <div class="contact-copy">
+          <h2>{{ contacto.firstName }} {{ contacto.lastName }}</h2>
+          <p>{{ contacto.number }}</p>
+        </div>
+        <div class="contact-actions">
+          <a [routerLink]="['/agenda', contacto.id]" class="contact-link">Ver</a>
+          <a [routerLink]="['/agenda', contacto.id, 'edit']" class="contact-link">Editar</a>
+          <button type="button" (click)="eliminarContacto(contacto.id)" class="delete-contact-button">Eliminar</button>
+        </div>
+      </article>
+    }
+    </div>
+  </section>
 </main>

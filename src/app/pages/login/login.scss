@@ -98,10 +98,6 @@ button {
   cursor: pointer;
 }
 
-button:hover:not(:disabled) {
-  background: #185bcc;
-}
-
 button:disabled {
   opacity: 0.5;
   cursor: not-allowed;
@@ -118,10 +114,6 @@ button:disabled {
   color: #1f6feb;
   text-decoration: none;
   font-weight: 600;
-}
-
-.switch-copy a:hover {
-  text-decoration: underline;
 }
 
 @media (max-width: 760px) {
